@@ -1,17 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package finals;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Shop {
      private int item_no;
      private String item_name;
      private float item_price;
      private String item_product;
+     private int itemnum;
      
      // getter setter
      public void setName(String Name){
@@ -30,6 +27,12 @@ public class Shop {
          return this.item_no;
           
      }
+     
+     public int setDel(int no){
+         return this.item_no = no;
+     }
+     
+     
      public void setPrice(float price){
          this.item_price = price;   
      }
@@ -63,4 +66,18 @@ public class Shop {
              System.out.println("------------------------------------------------------------------------------------------");
          }
      }
+     
+     //Delete
+     public void setItemsIndex(ArrayList<Shop> arr, int itemnumber) {
+         for (Shop shop : new ArrayList<Shop>(arr)){
+             if(shop.item_no == itemnumber){
+                 arr.remove(shop); // REMOVE ONLY IF ITEM NUMBER MATCH USER INPUT
+             }
+         }
+     }
+     
+      public int getItemsIndex() {
+          return itemnum;
+     }
+     
 }

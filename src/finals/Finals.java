@@ -41,11 +41,16 @@ public class Finals {
               case "U":
                   break;
               case "X":
-                  break;
+                //Delete
+                System.out.println("Enter Item No. : ");
+                int inum = sc.nextInt();
+                s.setItemsIndex(List, inum);
+                s.displayItems(List);
+                System.out.println("Done");
+                break;
               case "E":
                   System.exit(0);
                   break;
-                  
               default:
                   break;
                    
@@ -57,5 +62,3 @@ public class Finals {
          }
     }
 }
-    
-
