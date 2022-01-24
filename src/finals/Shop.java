@@ -55,6 +55,7 @@ public class Shop {
          this.item_product = s.item_product;
      }
      
+     //Method that will show the user's input the array list
      public void displayItems(ArrayList<Shop> arr){
          for (Shop shop : arr){
              System.out.println("------------------------------------------------------------------------------------------");

@@ -3,7 +3,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class Finals {
     
-    static void menu(){
+    //Method for the user to pick 
+    public static void menu(){
         System.out.println(" A - Add New Item");
         System.out.println(" D - Display Inventory");
         System.out.println(" U - Update Inventory");
@@ -11,10 +12,12 @@ public class Finals {
         System.out.println(" E - Exit");
     }
     public static void main(String[] args) {
+      
       String opt;
       Scanner sc = new Scanner(System.in);
       ArrayList<Shop> List = new ArrayList<Shop>();
       
+        //Loop
       for (int x = 0; x < 5; x++){
       do{
           menu();
@@ -22,7 +25,7 @@ public class Finals {
           opt = sc.nextLine();
           
           switch(opt){
-              
+              // It display the input that the user type
               case "A":
                 System.out.println("Choose one: Dry Goods, Frozen Goods, Supplies");
                 s.setProduct(sc.nextLine());
@@ -36,12 +39,16 @@ public class Finals {
                 List.add(s);
                 s.displayItems(List);
                 break;
+                
               case "D":
                   break;
+                  
               case "U":
                   break;
+                  
               case "X":
                   break;
+                  
               case "E":
                   System.exit(0);
                   break;
@@ -53,7 +60,7 @@ public class Finals {
               }
       
           while(opt.equals(0));
-          
+         
          }
     }
 }
