@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Update extends FileOperation{
+public class Update extends FileParent{
     
-     List<String[]> records = new ArrayList<>(); 
+     /*List<String[]> records = new ArrayList<>();
     
     public Update(){
         super();
@@ -21,6 +21,26 @@ public class Update extends FileOperation{
                records.add(new String[]{id, "test", "test"});
             else
                 records.add(a);
+        }
+        setRecords(records);
+        modifyData();
+    }*/
+
+    List<String[]> records = new ArrayList<>();
+
+    public void setFileLocation(String filelocation) {
+        setFilename(filelocation);
+        populateList();
+    }
+
+    public void updateData(String id, int row, String change){
+        for(String[] a: getRecords()){
+            if(a[0].contains(id)){
+                a[row] = change;
+                records.add(a);
+            } else {
+                records.add(a);
+            }
         }
         setRecords(records);
         modifyData();

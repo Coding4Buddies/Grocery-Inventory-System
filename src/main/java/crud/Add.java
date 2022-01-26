@@ -11,9 +11,9 @@ public class Add extends FileOperation{
     }
     
     // Method that Add Data to the File
-    public void writeToFile(String data){
+    public void writeToFile(String data, String filename){
         try{
-            FileWriter data_writer = new FileWriter(getFileLocation(), true);
+            FileWriter data_writer = new FileWriter(filename, true);
             data_writer.write(data + "\n");
             data_writer.close();
             populateList();
