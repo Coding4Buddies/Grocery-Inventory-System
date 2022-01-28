@@ -16,14 +16,21 @@ public class View extends FileParent{
 
     public void setFileLocation(String filelocation) {
         setFilename(filelocation);
-        populateList();
     }
 
     //Method to View Data the file
     public void viewFile() {
-        for(String[] a: getRecords()){
-            String formatArray = Arrays.toString(a).replace("[", "").replace("]", "").trim();
-            System.out.println(formatArray);
+        try {
+            File myObj = new File(getFilename());
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
     }
 }
