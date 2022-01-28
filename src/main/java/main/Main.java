@@ -86,9 +86,9 @@ public class Main {
             String name = scan.nextLine();
             System.out.print("Quantity: ");
             String quantity = scan.nextLine();
-            System.out.print("Price: ");
+            System.out.print("Price (₱): ");
             String price = scan.nextLine();
-            System.out.print("Volume: ");
+            System.out.print("Volume (ml): ");
             String volume = scan.nextLine();
             System.out.print("Container Type: ");
             String container = scan.nextLine();
@@ -109,7 +109,7 @@ public class Main {
             String name = scan.nextLine();
             System.out.print("Quantity: ");
             String quantity = scan.nextLine();
-            System.out.print("Price: ");
+            System.out.print("Price (₱): ");
             String price = scan.nextLine();
             System.out.print("Expiration Date: ");
             String expiration = scan.nextLine();
@@ -129,7 +129,7 @@ public class Main {
             String name = scan.nextLine();
             System.out.print("Quantity: ");
             String quantity = scan.nextLine();
-            System.out.print("Price: ");
+            System.out.print("Price (₱): ");
             String price = scan.nextLine();
 
             try {
@@ -147,7 +147,7 @@ public class Main {
             String name = scan.nextLine();
             System.out.print("Quantity: ");
             String quantity = scan.nextLine();
-            System.out.print("Price: ");
+            System.out.print("Price (₱): ");
             String price = scan.nextLine();
             System.out.println("Minimum Temperature: ");
             String minimum = scan.nextLine();
@@ -169,7 +169,7 @@ public class Main {
             String name = scan.nextLine();
             System.out.print("Quantity: ");
             String quantity = scan.nextLine();
-            System.out.print("Price: ");
+            System.out.print("Price (₱): ");
             String price = scan.nextLine();
 
             try {
@@ -291,21 +291,76 @@ public class Main {
         } else if(input.equals("C")) {
             update.setFileLocation("data/can.csv");
 
+            try {
+                System.out.print("Type ID to Update: ");
+                String id = scan.nextLine();
+                System.out.print("Type Row to Select: ");
+                String row = scan.nextLine();
+                System.out.print("Value to Change: ");
+                String value = scan.nextLine();
+
+                update.updateData(id, Integer.parseInt(row), value);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
         } else if(input.equals("D")) {
             update.setFileLocation("data/dry.csv");
+
+            try {
+                System.out.print("Type ID to Update: ");
+                String id = scan.nextLine();
+                System.out.print("Type Row to Select: ");
+                String row = scan.nextLine();
+                System.out.print("Value to Change: ");
+                String value = scan.nextLine();
+
+                update.updateData(id, Integer.parseInt(row), value);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
 
         } else if(input.equals("F")) {
             update.setFileLocation("data/frozen.csv");
 
+            try {
+                System.out.print("Type ID to Update: ");
+                String id = scan.nextLine();
+                System.out.print("Type Row to Select: ");
+                String row = scan.nextLine();
+                System.out.print("Value to Change: ");
+                String value = scan.nextLine();
+
+                update.updateData(id, Integer.parseInt(row), value);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
         } else if(input.equals("O")) {
             update.setFileLocation("data/others.csv");
+
+            try {
+                System.out.print("Type ID to Update: ");
+                String id = scan.nextLine();
+                System.out.print("Type Row to Select: ");
+                String row = scan.nextLine();
+                System.out.print("Value to Change: ");
+                String value = scan.nextLine();
+
+                update.updateData(id, Integer.parseInt(row), value);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
         }
     }
 
     public void printOutput(int op) {
         if(op == 1) {
             optionProducts();
-            addSelectedProducts(selectProducts());
+            String choose = selectProducts();
+            viewSelectedProducts(choose);
+            addSelectedProducts(choose);
         } else if (op == 2){
             optionProducts();
             viewSelectedProducts(selectProducts());
