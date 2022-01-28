@@ -8,25 +8,22 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class View extends FileOperation{
+public class View extends FileParent{
     
     public View() {
         super();
     }
-    
+
+    public void setFileLocation(String filelocation) {
+        setFilename(filelocation);
+        populateList();
+    }
+
     //Method to View Data the file
-    public void viewFile(String filename) {
-        try {
-            File myObj = new File(filename);
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+    public void viewFile() {
+        for(String[] a: getRecords()){
+            String formatArray = Arrays.toString(a).replace("[", "").replace("]", "").trim();
+            System.out.println(formatArray);
         }
     }
 }

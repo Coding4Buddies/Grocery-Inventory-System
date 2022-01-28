@@ -184,30 +184,35 @@ public class Main {
     public void viewSelectedProducts(String input) {
         System.out.println();
         if(input.equals("B")) {
+            view.setFileLocation("data/beverages.csv");
             System.out.println("Output for Beverages:\n");
             System.out.println("ID, NAME, QUANTITY, PRICE, VOLUME, CONTAINER TYPE");
             System.out.println("===================================================");
-            view.viewFile("data/beverages.csv");
+            view.viewFile();
         } else if(input.equals("C")) {
+            view.setFileLocation("data/can.csv");
             System.out.println("Output for Cans Foods: \n");
             System.out.println("ID, NAME, QUANTITY, PRICE, EXPIRATION DATE");
             System.out.println("===================================================");
-            view.viewFile("data/can.csv");
+            view.viewFile();
         } else if(input.equals("D")) {
+            view.setFileLocation("data/dry.csv");
             System.out.println("Output for Dry Foods: \n");
             System.out.println("ID, NAME, QUANTITY, PRICE");
             System.out.println("==================================");
-            view.viewFile("data/dry.csv");
+            view.viewFile();
         } else if(input.equals("F")) {
+            view.setFileLocation("data/frozen.csv");
             System.out.println("Output for Frozen Foods: \n");
             System.out.println("ID, NAME, QUANTITY, PRICE, MINIMUM TEMP, MAXIMUM TEMP");
             System.out.println("========================================================");
-            view.viewFile("data/frozen.csv");
+            view.viewFile();
         } else if(input.equals("O")) {
+            view.setFileLocation("data/others.csv");
             System.out.println("Output for Others: \n");
             System.out.println("ID, NAME, QUANTITY, PRICE");
             System.out.println("==================================");
-            view.viewFile("data/others.csv");
+            view.viewFile();
         }
     }
 
