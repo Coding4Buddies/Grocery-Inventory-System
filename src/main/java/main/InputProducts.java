@@ -17,13 +17,14 @@ public class InputProducts {
     }
 
     public void insertBeverages(Beverages beverages) {
+        add.setFileLocation("data/beverages.csv");
         String output = beverages.getId() +","
                 + beverages.getName() + ","
                 + beverages.getQuantity() + ","
                 + beverages.getPrice() + ","
                 + beverages.getVolume() + ","
                 + beverages.getContainer_type();
-        add.writeToFile(output, "data/beverages.csv");
+        add.writeToFile(output);
     }
 
     /*
@@ -37,12 +38,13 @@ public class InputProducts {
     }
 
     public void insertCan(Can can) {
+        add.setFileLocation("data/can.csv");
         String output = can.getId() +","
                 + can.getName() + ","
                 + can.getQuantity() + ","
                 + can.getPrice() + ","
                 + can.getExpiration_date();
-        add.writeToFile(output, "data/can.csv");
+        add.writeToFile(output);
     }
 
     /*
@@ -56,11 +58,12 @@ public class InputProducts {
     }
 
     public void insertDry(Dry dry) {
+        add.setFileLocation("data/dry.csv");
         String output = dry.getId() +","
                 + dry.getName() + ","
                 + dry.getQuantity() + ","
                 + dry.getPrice();
-        add.writeToFile(output, "data/dry.csv");
+        add.writeToFile(output);
     }
 
     /*
@@ -74,13 +77,14 @@ public class InputProducts {
     }
 
     public void insertFrozen(Frozen frozen) {
+        add.setFileLocation("data/frozen.csv");
         String output = frozen.getId() +","
                 + frozen.getName() + ","
                 + frozen.getQuantity() + ","
                 + frozen.getPrice() + ","
                 + frozen.getMinimum_temperature() + ","
                 + frozen.getMaximum_temperature();
-        add.writeToFile(output, "data/frozen.csv");
+        add.writeToFile(output);
     }
 
     /*
@@ -94,12 +98,11 @@ public class InputProducts {
     }
 
     public void insertOthers(Others others) {
+        add.setFileLocation("data/others.csv");
         String output = others.getId() +","
                 + others.getName() + ","
                 + others.getQuantity() + ","
                 + others.getPrice();
-        add.writeToFile(output, "data/others.csv");
+        add.writeToFile(output);
     }
-
-
 }

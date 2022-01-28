@@ -4,16 +4,19 @@ package crud;
 
 import java.io.*;
 
-public class Add extends FileOperation{
+public class Add extends FileParent{
     
     public Add() {
         super();
     }
-    
+
+    public void setFileLocation(String filelocation) {
+        setFilename(filelocation);
+    }
     // Method that Add Data to the File
-    public void writeToFile(String data, String filename){
+    public void writeToFile(String data){
         try{
-            FileWriter data_writer = new FileWriter(filename, true);
+            FileWriter data_writer = new FileWriter(getFilename(), true);
             data_writer.write(data + "\n");
             data_writer.close();
             populateList();
